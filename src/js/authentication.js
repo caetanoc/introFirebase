@@ -39,6 +39,7 @@ authEmailPassButton.addEventListener('click', function () {
             console.log(result);
             displayName.innerText = 'Bem vindo, ' + emailInput.value;
             alert('Autenticado ' + emailInput.value);
+
         })
         .catch(function (error) {
             console.error(error.code);
@@ -55,6 +56,7 @@ logOutButton.addEventListener('click', function () {
         .then(function () {
             displayName.innerText = 'Você não está autenticado';
             alert('Você se deslogou');
+            validSession = false;
         }, function (error) {
             console.error(error);
         });
@@ -117,3 +119,4 @@ function signIn(provider) {
             alert('Falha na autenticação');
         });
 }
+
